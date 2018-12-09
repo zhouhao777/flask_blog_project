@@ -1,4 +1,105 @@
-{% extends "layout.html" %}
-{% block content %}
-    <h1>about page</h1>
-{% endblock content %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+      <!-- <link  rel="stylesheet" type="text/css" href="style.css"></link> -->
+      <style>
+        html,body {
+            overflow: hidden;
+            background:  #66a266;
+        }
+
+        #main{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: 1;
+            animation: fadeIn 4s ease-in;
+        }
+
+        .card{
+            height: 550px;
+            width: 900px;
+            background: white;
+            overflow: hidden;
+        }
+
+        .card img{
+            left:360px;
+            top: -90px;
+            position: absolute;
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+        }
+
+        h1{
+            position: absolute;
+            left: 380px;
+            top: 100px;
+            font: 200px;
+            font-weight: 900;
+            font-family:  'Century Gothic',sans-serif;
+        }
+
+        .content{
+            position: absolute;
+            top:180px;
+            left: 150px;
+            right:150px;
+        }
+
+        content p,.para{
+            font: 70px;
+            line-height: 30px;
+            text-align: justify; 
+        }
+
+        .leaves1{
+            position: absolute;
+            left: 700px;
+            top:10px;
+            height: 700px;
+            width: 200px;
+            background-image: url('static/img/about-leaves1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            overflow: hidden; 
+        }
+
+        .leaves2{
+            position: absolute;
+            top:320px;
+            height: 230px;
+            width: 500px;
+            background-image: url('static/img/about-leaves2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            overflow: hidden; 
+        }
+            
+      </style>
+  </head>
+  <body>
+    <div id="main">
+        <div class="card">
+            <img src="static/profile_pics/default.jpg" alt="">
+            <h1>ZHOUHAO</h1>
+            <div class="content">
+                <p class="para">
+                    Further, it may well be argued that a major reason for Trump's 2016 victory was his opposition: Hillary Clinton. An often unliked and untrusted career politician with a plethora of personal scandals, who caused a historical divide even amongst the left-leaning populace, to the point where statistics later revealed that 1 out of 10 Bernie Sanders supporters ... actually voted for Trump
+                    But will such a scenario repeat itself for 2020? Probably not, given the immense popularity of the most likely Democratic candidates, be that Elizabeth Warren, Beto O'Rourke, or Joe Biden.
+                </p>
+            </div>
+        </div>
+        <div class="leaves1"></div>
+        <div class="leaves2"></div>
+
+    </div>  
+
+
+  </body>
+</html>

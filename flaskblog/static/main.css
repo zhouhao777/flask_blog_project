@@ -1,33 +1,101 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
-html, body {
-  height: 100%;
-  width: 100%;
-  background: #fafafa;
-  color: #333333;
-  font-family: 'Poppins', sans-serif;
-  /*margin-top: 5rem;*/
+* {
+  padding: 0;
+  margin: 0;
+} 
+body {
+  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing:antialiases;
+}
+li {
+  list-style: none;
+  display: inline-block;
+}
+a {
+  text-decoration: none;
+  transition: all .5s ease-in-out;
+}
+a:hover
+a:active {
+  text-decoration: none;
+}
+h1, h2, h4 {
+  font-family: 'PT Sans Narraw',Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+p {
+  font-size: 15px;
+  line-height: 21px;
+}
+.btn {
+  transition: all .3s ease-in-out;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+}
+.btn:hover {
+  background: #ededed !important;
+  color: #3c3c3c !important;
+  border: 1px solid #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #444444;
-}
-
-.bg-steel {
-  background-color: #5f788a;
-}
+/* NAVIGATION */
 .navbar {
-  padding: .8rem;
+  background-color: #66a266;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  padding: .5rem;
 }
-.navbar-nav li {
-  padding-right: 20px;
-}
-.nav-link {
-  font-size: 1.1rem !important;
+.navbar-brand {
+  font-size: 1.5rem !important;
   font-weight: 800;
+  color: #ffffff !important;
 }
+.navbar-toggler{
+  /* background: #197047; */
+  border: #eee 2px solid;
+  width: 40px;
+  height: 40px;
+}
+.nav-item{
+  padding: 8px;
+}
+.dropdown-menu{
+  background: #66a266;
+  margin: .5rem 0 0;
+}
+.dropdown-menu li{
+  display: block;
+}
+.dropdown-menu li a{
+  text-decoration: none;
+  padding-left: 1rem;
+  font:0.8rem sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+.nav-item a {
+  color: #ffffff !important;
+  font-size: 1.1rem !important;
+  opacity: 0.8;
+  font-weight: 700;
+}
+.nav-item a:hover {
+  opacity: 1;
+}
+
+
+/* main */
+.main{
+  padding: 45px 0;
+}
+
 .social a {
-  font-size: 4.5rem;
-  padding: 3rem;
+  font-size: 2.5rem;
+  padding: 1.5rem;
 }
 .fa-facebook {
   color: #3B5998;
@@ -50,9 +118,6 @@ h1, h2, h3, h4, h5, h6 {
 .fa-instagram:hover,
 .fa-youtube:hover {
   color: #d5d5d5;
-}
-.site-header .navbar-nav .nav-link.active {
-  font-weight: 800;
 }
 
 .content-section {
@@ -121,45 +186,3 @@ a.article-title:hover {
 
 }
 
-
-/*---Firefox Bug Fix --*/
-.carousel-item {
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-}
-/*--- Fixed Background Image --*/
-figure {
-  position: relative;
-  width: 100%;
-  height: 60%;
-  margin: 0!important;
-}
-.fixed-wrap {
-  clip: rect(0, auto, auto, 0);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-#fixed {
-  background-image: url('img/mac.png');
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  will-change: transform;
-}
-/*--- Bootstrap Padding Fix --*/
-[class*="col-"] {
-    padding: 1rem;
-}
