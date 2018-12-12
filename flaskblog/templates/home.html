@@ -6,7 +6,7 @@
             <div class="article-metadata">
               <h2><a class="article-title" href="{{ url_for('posts.post',post_id=post.id) }}">{{ post.title }}</a></h2>
               <!-- <a class="mr-2" href="#">{{ post.author.username }}</a> -->
-              <small class="text-muted">Posted by {{ post.author.username }} on {{ post.date_posted.strftime('%B %d, %Y').capitalize() }} | linux随笔</small>
+              <small class="text-muted">Posted by {{ post.author.username }} on {{ post.date_posted.strftime('%B %d, %Y').capitalize() }} | {{ post.category }}</small>
               <span></span>
             </div>
             
