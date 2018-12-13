@@ -24,7 +24,6 @@ a:active {
 }
 h1, h2, h4 {
   font-family: 'PT Sans Narraw',Arial, Helvetica, sans-serif;
-  /* text-transform: uppercase; */
   font-weight: 700;
 }
 p {
@@ -48,7 +47,7 @@ p {
 }
 /* NAVIGATION */
 .navbar {
-  background-color: #66a266;
+  background-color: rgba(192, 190, 190, 0.29);
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
@@ -57,10 +56,9 @@ p {
 .navbar-brand {
   font-size: 1.5rem !important;
   font-weight: 800;
-  color: #ffffff !important;
+  color: #222 !important;
 }
 .navbar-toggler{
-  /* background: #197047; */
   border: #eee 2px solid;
   width: 40px;
   height: 40px;
@@ -69,7 +67,7 @@ p {
   padding: 8px;
 }
 .dropdown-menu{
-  background: #66a266;
+  /* background: #66a266; */
   margin: .5rem 0 0;
 }
 .dropdown-menu li{
@@ -83,7 +81,7 @@ p {
   text-transform: lowercase;
 }
 .nav-item a {
-  color: #ffffff !important;
+  color: #333 !important;
   font-size: 1.1rem !important;
   opacity: 0.8;
   font-weight: 700;
