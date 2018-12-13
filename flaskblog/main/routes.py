@@ -25,7 +25,7 @@ def get_category_post(category_name):
         abort(404)
     page = request.args.get('page', 1, type=int)
     posts = Post.query.filter_by(category=category_name).order_by(Post.date_posted.desc()).paginate(page=page, per_page=6)
-    return render_template('home.html', title=category_name, posts=posts)
+    return render_template('author_post.html', category_name=category_name, posts=posts, title=category_name)
 
 
 

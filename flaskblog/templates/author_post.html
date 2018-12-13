@@ -8,7 +8,7 @@
               <small class="text-muted">
                 Posted by {{ post.author.username }} on {{ post.date_posted.strftime('%B %d, %Y').capitalize() }}   
                 {% if post.category %}
-                | <a class="mr-2" href="{{ url_for('main.get_category_post', category_name=post.category) }}">{{ post.category }}</a>
+                | <a class="mr-2" href="{{ url_for('main.get_category_post',category_name=post.category) }}">{{ post.category }}</a>
                 {% endif %}
               </small>
               <span></span>
@@ -21,9 +21,9 @@
     {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
       {% if page_num %}
         {% if posts.page == page_num %}
-          <a class="btn btn-info mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
+          <a class="btn btn-info mb-4" href="{{ url_for('main.get_category_post',category_name=category_name,page=page_num) }}">{{ page_num }}</a>
         {% else %}
-          <a class="btn btn-outline-info mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
+          <a class="btn btn-outline-info mb-4" href="{{ url_for('main.get_category_post',category_name=category_name,page=page_num) }}">{{ page_num }}</a>
         {% endif %}
       {% else %}
         ...
