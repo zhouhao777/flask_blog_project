@@ -90,8 +90,75 @@ p {
 
 /* main */
 .main{
-  padding: 45px 0;
+  padding-top: 70px;
 }
+article {
+  display: block;
+}
+.post {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  padding-bottom: 2rem;
+  border-bottom: rgb(235, 242, 246) .05rem solid;
+  word-break: break-word;
+  hyphens: auto;
+}
+.post-meta {
+  display: inline-block;
+  margin: 0 0 5px;
+  font-family: 'Open Sans',sans-serif;
+  font-size: .75rem;
+  color: rgb(153, 153, 153);
+}
+.post-date .post-meta .post-tags {
+  margin-right: 15px;
+}
+.post-meta .fa {
+  margin-right: 5px;
+  color: rgb(221, 221, 221);
+}
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-calendar:before {
+  content: "\f133";
+}
+.fa-tag:before {
+  content: "\f02b";
+}
+.post-title {
+  font-size: 1.5rem;
+  margin: 0.25rem 0 0.85rem 0;
+  font-weight: 400;
+  /* line-height: 1.2rem;
+  text-rendering: optimizeLegibility; */
+}
+.post-content {
+  line-height: 1.8rem;
+}
+.post-more {
+  clear: both;
+}
+.read-more {
+  float: right;
+  font-size: 0.75rem;
+  line-height: 1.6em;
+}
+.post-more a {
+  color: rgb(74, 74, 74);
+  text-decoration: none;
+  border-bottom: .05rem solid rgb(92, 173, 255);
+}
+
+
 
 .social a {
   font-size: 2.5rem;

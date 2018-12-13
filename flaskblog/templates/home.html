@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
     {% for post in posts.items %}
-        <article class="media content-section">
+        <!-- <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
               <h2><a class="article-title" href="{{ url_for('posts.post',post_id=post.id) }}">{{ post.title }}</a></h2>
@@ -15,7 +15,40 @@
             </div>
             <p class="article-content">{{ post.content }}</p>
           </div>
+        </article> -->
+
+        <article class="post">
+          <header class="post-header">
+            <span class="post-meta">
+                <div class="post-header">
+                    <time class="post-date" datetime="2019-12-12">
+                      <i class="fa fa-calendar"></i>
+                      "2019-12-12"
+                    </time>
+                    <span class="post-tags">
+                      <i class="fa fa-tag"></i>
+                      <a href="#">Tag</a>
+                    </span> 
+                  </div>
+                  <h2 class="post-title">
+                    <a href="">post title content</a>
+                  </h2>
+            </span>
+          </header>
+          <section class="post-content">
+              12月6日微软官方博客放出一片博文《
+              Microsoft Edge: Making the web 
+              better through more open source collaboration》
+              ，宣布了Edge浏览器将使用Chromium来开发：Today we’re 
+              announcing that we intend ... 
+            <div class="post-more">
+              <a class="read-more" rel="nofollow" href="">read more >></a>
+            </div>
+          </section>
+
+
         </article>
+
     {% endfor %}
     {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
       {% if page_num %}
