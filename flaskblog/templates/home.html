@@ -19,10 +19,10 @@
                 <h2 class="post-title">
                   <a href="{{ url_for('posts.post',post_id=post.id) }}">{{ post.title }}</a>
                 </h2>
-          </span>
+          </span> 
         </header>
-        <section class="post-content">
-          {{ post.content }}
+        <section class="post-content"> 
+          {{ post.content if post.content|length < 200 else post.content[:200]+" ..." }}
           <div class="post-more">
             <a class="read-more" rel="nofollow" href="{{ url_for('posts.post',post_id=post.id) }}">Read more »</a>
           </div>

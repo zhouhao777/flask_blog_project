@@ -52,10 +52,14 @@ p {
   font-weight: 700;
   padding: .5rem;
 }
-.navbar-brand {
-  font-size: 1.5rem !important;
+.navbar-brand a {
+  font-size: 1.5rem;
   font-weight: 800;
-  color: #222 !important;
+  /* color: #666; */
+  background: linear-gradient(to bottom,#3654ff 0,#62e6eb 50%,#3654ff 100%);
+  -webkit-background-clip: text ;
+  color: transparent;
+
 }
 .navbar-toggler{
   border: #eee 2px solid;
@@ -80,7 +84,7 @@ p {
   text-transform: lowercase;
 }
 .nav-item a {
-  color: #333 !important;
+  color: #666 !important;
   font-size: 1.1rem !important;
   opacity: 0.8;
   font-weight: 700;
@@ -93,8 +97,8 @@ p {
 /* main post */
 .main{
   padding-top: 70px;
-  max-width: 800px;
-  min-height: calc(100vh - 18rem);
+  max-width: 1000px;
+  min-height: calc(100vh - 20rem);
 }
 .flush {
   width: 80%;
@@ -210,6 +214,7 @@ article {
 /* footer */
 .site-footer{
   margin-top: 5rem;
+  margin-bottom: 2rem;
   border-top: 1px solid #dddddd;
 }
 .site-footer .footer-text{
@@ -224,9 +229,9 @@ article {
   text-align: center;
 }
 .footer-icon .fa{
-  padding: 0.2rem;
+  padding: 0.2rem 0.3rem;
   color: rgb(108, 117, 125);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.4rem;
 }
 .footer-icon .fa:hover {
