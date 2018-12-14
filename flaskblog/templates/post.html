@@ -1,22 +1,36 @@
 {% extends "layout.html" %}
 {% block content %}
-    <article class="media content-section">
-      <div class="media-body">
-        <div class="article-metadata">
-          <a class="mr-2" href="#">{{ post.author.username }}</a>
-          <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-
-          {% if post.author == current_user %}
+    <article class="post">
+      <header class="post-header">
+        <span class="post-meta">
+            <div class="post-header">
+                <time class="post-date" datetime="{{ post.date_posted.strftime('%Y-%m-%d') }}">
+                  <i class="fa fa-calendar"></i>
+                  {{ post.date_posted.strftime('%Y-%m-%d') }}
+                </time>
+                {% if post.category %}
+                <span class="post-tags">
+                  <i class="fa fa-tag"></i>
+                  <a href="{{ url_for('main.get_category_post', category_name=post.category) }}">{{ post.category.capitalize() }}</a>
+                </span> 
+                {% endif %}
+              </div>
+              <h2 class="post-title">
+                {{ post.title }}
+              </h2>
+        </span>
+        {% if post.author == current_user %}
             <div>
               <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('posts.update_post', post_id=post.id) }}">Update</a>
               <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
             </div>
-          {% endif %}
-        </div>
-        <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-        <p class="article-content">{{ post.content }}</p>
-      </div>
+        {% endif %}
+      </header>
+      <section class="post-content">
+        {{ post.content }}
+      </section>
     </article>
+
 
     <!-- Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
