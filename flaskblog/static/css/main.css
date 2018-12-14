@@ -91,7 +91,7 @@ p {
 }
 
 
-/* main */
+/* main post */
 .main{
   padding-top: 70px;
 }
@@ -162,7 +162,7 @@ article {
   text-decoration: none;
   border-bottom: .05rem solid rgb(92, 173, 255);
 }
-
+/* pagination */
 .pagination {
   position: relative;
   width: 80%;
@@ -196,7 +196,7 @@ article {
 .older-posts {
   right: 0;
 }
-
+/* .category */
 .category-header {
   padding: 20px 0;
   text-align: center;
@@ -209,33 +209,30 @@ article {
 .category-header h1{
   font-weight: 400;
 }
-
-
-.social a {
-  font-size: 2.5rem;
-  padding: 1.5rem;
+/* footer */
+.site-footer{
+  margin-top: 5rem;
+  border-top: 1px solid #dddddd;
 }
-.fa-facebook {
-  color: #3B5998;
+.site-footer .footer-text{
+  margin-top: 2rem;
+  text-align: center;
 }
-.fa-twitter {
-  color: #00aced
+.footer-text h4{
+  color: #444;
+  font-weight: 400;
 }
-.fa-google-plus-g {
-  color: #dd4b39;
+.footer-icon{
+  text-align: center;
 }
-.fa-instagram {
-  color: #517fa4;
+.footer-icon .fa{
+  padding: 0.2rem;
+  color: rgb(108, 117, 125);
+  font-size: 1.2rem;
+  line-height: 1.4rem;
 }
-.fa-youtube {
-  color: #bb0000;
-}
-.fa-facebook:hover,
-.fa-twitter:hover,
-.fa-google-plus-g:hover,
-.fa-instagram:hover,
-.fa-youtube:hover {
-  color: #d5d5d5;
+.footer-icon .fa:hover {
+  color: rgb(108, 117, 125, 0.7);
 }
 
 .content-section {

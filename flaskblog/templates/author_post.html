@@ -36,8 +36,8 @@
     <div class="pagination">
       {% if posts.has_prev %}
       <a href="{{ url_for('main.get_category_post', category_name=category_name, page=posts.page-1) }}" class="newer-posts">
+        <span aria-hidden="true">←</span>
         Newer Posts
-        <span aria-hidden="true">→</span>
       </a>
       {% endif %}
       <span class="page-number">Page {{ posts.page }} of {{ posts.pages }}</span>
