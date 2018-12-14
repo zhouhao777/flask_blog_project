@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+@font-face {
+  font-family:'FontAwesome';
+  src:url('../font/fontawesome-webfont.woff2') format('woff2');
+  font-style:normal
+}
 * {
   padding: 0;
   margin: 0;
@@ -39,6 +43,14 @@ p {
   background: #ededed !important;
   color: #3c3c3c !important;
   border: 1px solid #fff;
+}
+.fa {
+  display:inline-block;
+  font:normal normal normal 14px/1 FontAwesome;
+  font-size:inherit;
+  text-rendering:auto;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale
 }
 ::selection {
   color: #222;
@@ -234,6 +246,18 @@ article {
   color: rgb(108, 117, 125);
   font-size: 1.2rem;
   line-height: 1.4rem;
+}
+.fa-facebook-square:before {
+  content: "\f082";
+}
+.fa-github-square:before {
+  content: "\f092";
+}
+.fa-weibo:before {
+  content: "\f18a";
+}
+.fa-youtube-play:before {
+  content: "\f16a";
 }
 .footer-icon .fa:hover {
   color: rgb(108, 117, 125, 0.7);
