@@ -94,6 +94,11 @@ p {
 /* main post */
 .main{
   padding-top: 70px;
+  max-width: 800px;
+}
+.flush {
+  width: 80%;
+  margin: 0 auto;
 }
 article {
   display: block;
@@ -101,7 +106,6 @@ article {
 .post {
   position: relative;
   width: 80%;
-  max-width: 800px;
   margin: 0 auto 2rem auto;
   padding-bottom: 3rem;
   border-bottom: rgb(235, 242, 246) .05rem solid;
