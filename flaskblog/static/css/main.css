@@ -107,6 +107,7 @@ p {
 .main{
   padding-top: 70px;
   max-width: 800px;
+  min-height: calc(100vh - 18rem);
 }
 .flush {
   width: 80%;
