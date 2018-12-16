@@ -11,7 +11,7 @@
                 {% if post.category %}
                 <span class="post-tags">
                   <i class="fa fa-tag"></i>
-                  <a href="{{ url_for('main.get_category_post', category_name=post.category) }}">{{ post.category.capitalize() }}</a>
+                  <a href="{{ url_for('main.get_category_post', category_name=post.category) }}">{{ post.category|capitalize }}</a>
                 </span> 
                 {% endif %}
               </div>
@@ -27,7 +27,7 @@
         {% endif %}
       </header>
       <section class="post-content">
-        {{ post.content }}
+        {{ post.content|safe }}
       </section>
     </article>
 

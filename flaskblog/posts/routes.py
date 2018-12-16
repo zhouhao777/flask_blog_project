@@ -4,6 +4,7 @@ from flask_login import current_user, login_required
 from flaskblog import db
 from flaskblog.models import Post
 from flaskblog.posts.forms import PostForm
+import bleach
 
 posts = Blueprint('posts', __name__)
 
@@ -12,7 +13,16 @@ posts = Blueprint('posts', __name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(title=form.title.data,category=form.category.data, content=form.content.data, author=current_user)
+        # 限制特定标签
+        allowed_attributes = {
+            'a': ['href', 'title'],
+            'abbr': ['title'],
+            'acronym': ['title'],
+            'img': ['src'],
+        }
+        cleand_content = bleach.clean(form.content.data, tags=bleach.sanitizer.ALLOWED_TAGS + ['p','br','figure','img','figcaption'],
+         attributes=allowed_attributes)
+        post = Post(title=form.title.data,category=form.category.data, content=cleand_content, author=current_user)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!', 'success')
@@ -37,7 +47,15 @@ def update_post(post_id):
     if form.validate_on_submit():
         post.title = form.title.data
         post.category = form.category.data
-        post.content = form.content.data
+        # post.content = form.content.data
+        allowed_attributes = {
+            'a': ['href', 'title'],
+            'abbr': ['title'],
+            'acronym': ['title'],
+            'img': ['src'],
+        }
+        post.content = bleach.clean(form.content.data, tags=bleach.sanitizer.ALLOWED_TAGS + ['p','br','figure','img','figcaption'],
+            attributes=allowed_attributes)
         db.session.commit()
         flash('Your post has been updated!', 'success')
         return redirect(url_for('posts.post', post_id=post.id))

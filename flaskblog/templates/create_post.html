@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="content-section">
-    <form method="POST" action="">
+    <form method="POST" action="" novalidate>
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">{{ legend }}</legend>
@@ -41,7 +41,7 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.content(class="form-control form-control-lg") }}
+                    {{ form.content(class="from-control form-control-lg",id="editor") }}
                 {% endif %}
             </div>
         </fieldset>
@@ -49,5 +49,22 @@
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
     </form>
+
+    <script>
+        ClassicEditor
+        .create( document.querySelector( '#editor' ), {
+            toolbar: ["heading", "|", "alignment:left", "alignment:center", "alignment:right", "alignment:adjust", "|", "bold", "italic", "blockQuote", "link", "|", "bulletedList", "numberedList", "imageUpload", "|", "undo", "redo"],
+            ckfinder: {
+                uploadUrl: "http://127.0.0.1:5000/upload"
+            }
+        })
+        .then(editor => {
+            myEditor = editor;
+        })
+        .catch( error => {
+            console.error( error );
+        } );
+    </script>
+
 </div>
 {% endblock content %}
