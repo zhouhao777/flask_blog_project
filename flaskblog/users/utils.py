@@ -16,7 +16,8 @@ def save_picture(form_picture, source="post"):
     if source == "profile":
         output_size = (125,125)
     else:
-        output_size = (800, i_h*800/i_w) if i_w>=800 else i.size
+        #776的宽度是根据post的最大宽度计算的
+        output_size = (776, i_h*776/i_w) if i_w>=776 else i.size
     i.thumbnail(output_size)
     i.save(picture_path)
 

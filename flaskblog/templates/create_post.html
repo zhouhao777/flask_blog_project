@@ -53,10 +53,11 @@
     <script>
         ClassicEditor
         .create( document.querySelector( '#editor' ), {
-            toolbar: ["heading", "|", "alignment:left", "alignment:center", "alignment:right", "alignment:adjust", "|", "bold", "italic", "blockQuote", "link", "|", "bulletedList", "numberedList", "imageUpload", "|", "undo", "redo"],
+            toolbar: ["heading", "|", "bold", "italic", "blockQuote", "link", "|", "bulletedList", "numberedList", "imageUpload", "|", "undo", "redo"],
             ckfinder: {
                 uploadUrl: "http://127.0.0.1:5000/upload"
-            }
+            },
+            height:1000,
         })
         .then(editor => {
             myEditor = editor;
