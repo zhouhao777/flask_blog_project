@@ -1,6 +1,5 @@
-from flask import render_template, request, Blueprint, abort, url_for, send_from_directory
+from flask import render_template, request, Blueprint, abort, url_for, send_from_directory,jsonify
 from flaskblog.models import Post,User
-from flask_ckeditor import upload_success, upload_fail
 from flask import current_app
 from flask_login import login_required
 from PIL import Image
@@ -51,8 +50,7 @@ def upload():
     # 验证文件类型示例
     extension = f.filename.split('.')[1].lower()
     if extension not in ['jpg', 'gif', 'png', 'jpeg']: 
-        return upload_fail(message='Image only!') 
+        return jsonify(message='Image only!') 
     picture_file = save_picture(f)
     url = url_for('main.uploaded_files', filename=picture_file)
-    return upload_success(url=url) 
-
+    return jsonify(filename='',uploaded=1,url=url)
