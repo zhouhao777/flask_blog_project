@@ -53,7 +53,7 @@ p {
   padding: .5rem;
 }
 .navbar-brand a {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 800;
   /* color: #666; */
   background: linear-gradient(to bottom,#3654ff 0,#62e6eb 50%,#3654ff 100%);
@@ -67,31 +67,46 @@ p {
   height: 40px;
 }
 .nav-item{
-  padding: 8px;
+  padding: 10px;
+}
+.nav-item a {
+  color: #666;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  font-weight: 600;
+  line-height: 3rem;
+  text-decoration: none;
+}
+.nav-item a:hover {
+  opacity: 1;
 }
 .dropdown-menu{
   /* background: #66a266; */
   margin: .5rem 0 0;
 }
-.dropdown-menu li{
-  display: block;
+
+.dropdown-item{
+  padding: .15rem 0;
 }
-.dropdown-menu li a{
+.dropdown-item a{
+  color: #444;
   text-decoration: none;
   padding-left: 1rem;
   font:0.8rem sans-serif;
-  font-weight: 400;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
   text-transform: lowercase;
 }
-.nav-item a {
-  color: #666 !important;
-  font-size: 1.1rem !important;
-  opacity: 0.8;
-  font-weight: 700;
+.dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #eee;
 }
-.nav-item a:hover {
-  opacity: 1;
+.ck-content{
+  min-height: 400px;
 }
+
 
 
 /* main post */
