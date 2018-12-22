@@ -53,6 +53,12 @@ p {
   padding: .5rem;
   border-bottom: #ddd 1px solid;
 }
+.navbar-toggler {
+  padding: 0;
+}
+.navbar-toggler i {
+  color: #888;
+}
 .navbar-brand a {
   font-size: 1.8rem;
   font-weight: 800;
