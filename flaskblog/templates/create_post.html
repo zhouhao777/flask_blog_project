@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+<script src="{{ url_for('static', filename='js/ckeditor.js') }}"></script>
 <div class="content-section">
     <form method="POST" action="" novalidate>
         {{ form.hidden_tag() }}
