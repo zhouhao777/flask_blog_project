@@ -55,7 +55,7 @@
         .create( document.querySelector( '#editor' ), {
             toolbar: ["heading", "|", "bold", "italic", "blockQuote", "link", "|", "bulletedList", "numberedList", "imageUpload", "|", "undo", "redo"],
             ckfinder: {
-                uploadUrl: "http://127.0.0.1:5000/upload"
+                uploadUrl: "{{ url_for('main.upload') }}"
             },
             height:1000,
         })

@@ -28,15 +28,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="" href="{{ url_for('main.home') }}">Home</a>
+                    <li class="nav-item">      
+                        <a class="" href="{{ url_for('main.home') }}">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="" href="{{ url_for('main.about') }}">About</a>
+                        <a class="" href="{{ url_for('main.about') }}">
+                            <i class="fa fa-flask"></i>
+                            About
+                        </a>
                     </li>
                     {% if current_user.is_authenticated %}
                     <li class="nav-item dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">account</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user"></i>
+                            account
+                        </a>
                         <ul class="dropdown-menu">
                             <li class="dropdown-item">
                                 <a class="" href="{{ url_for('posts.new_post') }}">New Post</a>
