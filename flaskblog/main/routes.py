@@ -13,7 +13,7 @@ main = Blueprint('main', __name__)
 @main.route("/home")
 def home():
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=6)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=10)
     return render_template('home.html', posts=posts)
 
 
@@ -29,7 +29,7 @@ def get_category_post(category_name):
     if category_name not in category_list:
         abort(404)
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.filter_by(category=category_name).order_by(Post.date_posted.desc()).paginate(page=page, per_page=6)
+    posts = Post.query.filter_by(category=category_name).order_by(Post.date_posted.desc()).paginate(page=page, per_page=10)
     return render_template('category_post.html', category_name=category_name, posts=posts, title=category_name)
 
 
