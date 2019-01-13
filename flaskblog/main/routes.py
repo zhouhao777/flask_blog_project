@@ -1,10 +1,11 @@
 from flask import render_template, request, Blueprint, abort, url_for, send_from_directory,jsonify
-from flaskblog.models import Post,User
+from flaskblog.models import Post,User,Stock
 from flask import current_app
 from flask_login import login_required
 from PIL import Image
 from flaskblog.users.utils import save_picture
 import os
+import datetime
 
 main = Blueprint('main', __name__)
 
@@ -54,3 +55,12 @@ def upload():
     picture_file = save_picture(f)
     url = url_for('main.uploaded_files', filename=picture_file)
     return jsonify(filename='',uploaded=1,url=url)
+
+
+
+@main.route("/stock")
+def getStock():
+    one_day_ago = (datetime.datetime.utcnow() - datetime.timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
+    stocks = Stock.query.filter(Stock.ctime>one_day_ago).order_by(Stock.hot.desc()).limit(20).all()
+    # stocks = Stock.query.distinct(Stock.code).all()
+    return render_template('stock.html', stocks=stocks)

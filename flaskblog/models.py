@@ -30,3 +30,15 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
+
+class Stock(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(10),nullable=False)
+    ctime = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    hot = db.Column(db.Integer, default=0, nullable=False)
+
+
+    def __repr__(self):
+        return '<Stock %r>' % self.code
+

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+  <table width="400" border="1">
+    <tr>
+     <th align="left">code</th>
+     <th align="left">热度</th>
+    </tr>
+    {% for stock in stocks %}
+    <tr>
+     <td align="left">{{ stock.code }}</td>
+     <td align="left"> {{stock.hot}}</td>
+    </tr>
+    {% endfor %}
+   </table>
+{% endblock content %}
